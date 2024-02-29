@@ -41,7 +41,7 @@
           const data = parts.join('://');
 
           document.getElementById('longOnclickBtn').onclick = createOnClickHandler(input, data, scheme);
-          document.getElementById('shortOnclickBtn').onclick = createOnClickHandler('market', data, scheme);
+          document.getElementById('shortOnclickBtn').onclick = createOnClickHandler(market, data, scheme);
           document.getElementById('customOnclickBtn').onclick = function() {
             const inputValue = document.getElementById('urlInput').value;
             const encodedUrl = encodeURI(inputValue);
