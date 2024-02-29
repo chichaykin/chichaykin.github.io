@@ -27,10 +27,11 @@
       <button id="customOnclickBtn">Custom onelink</button>
 
       <button id="longOnclickBtn">Long onelink</button>
-      <button id="shortOnclickBtn">Short onelink</button>
+      <button id="shortOnclickBtn">Visit market</button>
       
       <script type="text/javascript">
         const input = 'https://grab.onelink.me/2695613898?pid=instagram_organic&c=SG_GF_170823_instagram_organic_&is_retargeting=true&af_dp=grab%3A%2F%2Fopen%3FscreenType%3DGRABFOOD%26categoryShortcutID%3D3735&af_web_dp=https%3A%2F%2Ffood.grab.com%2Fsg%2Fen%2F&af_ios_url=https%3A%2F%2Ffood.grab.com%2Fsg%2Fen%2F&af_force_deeplink=true';
+        const market = 'market://details?id=com.grabtaxi.passenger&referrer=af_tranid%3DB1QnGSo-m4kpOqEU6dlC_w%26utm_source%3Dwebsite%26af_dp%3Dgrab%253A%252F%252Fopen%253FscreenType%253DBOOKING%26utm_campaign%3DSG_NA_PAX_JG_ALL_LOC__NA_Broad%26c%3DSG_NA_PAX_JG_ALL_LOC__NA_Broad%26pid%3Dwebsite%26af_sub5%3Dorganic';
       
         // Assign events if on Android and `af_dp` exists.
         if (/Android/.test(navigator.userAgent) && new URL(input).searchParams.has('af_dp')) {
@@ -40,7 +41,7 @@
           const data = parts.join('://');
 
           document.getElementById('longOnclickBtn').onclick = createOnClickHandler(input, data, scheme);
-          document.getElementById('shortOnclickBtn').onclick = createOnClickHandler('https://grab.onelink.me/2695613898/GrabFood', data, scheme);
+          document.getElementById('shortOnclickBtn').onclick = createOnClickHandler('market', data, scheme);
           document.getElementById('customOnclickBtn').onclick = function() {
             const inputValue = document.getElementById('urlInput').value;
             const encodedUrl = encodeURI(inputValue);
